@@ -1,5 +1,7 @@
-package com.example.wingsjourney
+package com.example.wingsjourney.gameslist.framework.di
 
+import com.example.wingsjourney.gameslist.framework.di.qualifier.BaseUrl
+import com.example.wingsjourney.gameslist.framework.network.GamesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -8,30 +10,25 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.Calendar
-import java.util.TimeZone
 import java.util.concurrent.TimeUnit
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NetworkModule {
+object GamesListNetworkModule {
 
     private const val TIMEOUT_SECONDS = 15L
 
     @Provides
-    fun provideLoggingInterceptor(): HttpLoggingInterceptor {
+    fun provideLoggingInterceptor(): HttpLoggingInterceptor{
         return HttpLoggingInterceptor().apply {
-            setLevel(if(BuildConfig.DEBUG){
-                HttpLoggingInterceptor.Level.BODY
-            } else HttpLoggingInterceptor.Level.NONE
-            )
+            HttpLoggingInterceptor.Level.BODY
         }
     }
 
     @Provides
     fun provideHttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
-    ) : OkHttpClient{
+    ) : OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .readTimeout(TIMEOUT_SECONDS, TimeUnit.SECONDS)
@@ -46,15 +43,15 @@ object NetworkModule {
 
     @Provides
     fun provideRetrofit(
-        okHttpClient: OkHttpClient,
-        converterFactory: GsonConverterFactory
+        httpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory,
+        @BaseUrl baseUrl: String
     ) : GamesApi {
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
-            .client(okHttpClient)
-            .addConverterFactory(converterFactory)
+            .baseUrl(baseUrl)
+            .client(httpClient)
+            .addConverterFactory(gsonConverterFactory)
             .build()
             .create(GamesApi::class.java)
     }
-
 }

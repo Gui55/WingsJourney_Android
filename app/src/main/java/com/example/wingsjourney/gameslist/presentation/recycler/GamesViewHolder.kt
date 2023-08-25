@@ -1,11 +1,13 @@
-package com.example.wingsjourney
+package com.example.wingsjourney.gameslist.presentation.recycler
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
+import com.example.wingsjourney.R
 import com.example.wingsjourney.databinding.LayoutGameItemBinding
+import com.example.wingsjourney.gameslist.domain.model.Game
+import com.example.wingsjourney.util.LocalHostNameUtils
 
 class GamesViewHolder(binding: LayoutGameItemBinding) : ViewHolder(binding.root) {
     private val gameName = binding.tvGameName
@@ -14,7 +16,7 @@ class GamesViewHolder(binding: LayoutGameItemBinding) : ViewHolder(binding.root)
     fun bind(game: Game){
         gameName.text = game.name
         Glide.with(itemView)
-            .load(game.image)
+            .load(LocalHostNameUtils.replaceLocalHostString(game.image))
             .fallback(R.drawable.ic_launcher_foreground)
             .into(gameImage)
     }

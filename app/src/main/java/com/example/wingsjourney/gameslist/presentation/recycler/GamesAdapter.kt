@@ -1,8 +1,9 @@
-package com.example.wingsjourney
+package com.example.wingsjourney.gameslist.presentation.recycler
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.example.wingsjourney.gameslist.domain.model.Game
 
 class GamesAdapter : ListAdapter<Game, GamesViewHolder>(diffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GamesViewHolder {
