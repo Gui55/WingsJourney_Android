@@ -7,6 +7,10 @@ plugins {
 
 apply plugin: 'dagger.hilt.android.plugin'
 
+def secretPropertiesFile = rootProject.file("secretdata.properties")
+def secretProperties = new Properties()
+secretProperties.load(new FileInputStream(secretPropertiesFile))
+
 android {
     namespace 'com.example.wingsjourney'
     compileSdk 34
@@ -25,7 +29,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "BASE_URL", '"https://6410ee0295656eab41c58fb8.mockapi.io/"'
+        buildConfigField "String", "BASE_URL", secretProperties["LOCAL_IP"]
     }
 
     buildTypes {
