@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/gamesListFragment"
-        android:name="com.example.wingsjourney.presentation.view.GamesListFragment"
+        android:name="com.example.wingsjourney.gameslist.presentation.view.GamesListFragment"
         android:label="GamesListFragment" />
 
 </navigation>

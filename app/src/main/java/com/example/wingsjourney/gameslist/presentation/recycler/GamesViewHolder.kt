@@ -1,11 +1,12 @@
-package com.example.wingsjourney
+package com.example.wingsjourney.gameslist.presentation.recycler
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
+import com.example.wingsjourney.R
 import com.example.wingsjourney.databinding.LayoutGameItemBinding
+import com.example.wingsjourney.gameslist.domain.model.Game
 
 class GamesViewHolder(binding: LayoutGameItemBinding) : ViewHolder(binding.root) {
     private val gameName = binding.tvGameName
