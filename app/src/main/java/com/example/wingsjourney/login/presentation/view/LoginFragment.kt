@@ -1,7 +1,7 @@
 package com.example.wingsjourney.login.presentation.view
 
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -47,6 +47,15 @@ class LoginFragment : Fragment() {
                 }
                 is ResultStatus.Success -> {
                     if(it.data.token.isNotEmpty()){
+                        val sharedPref = activity?.getSharedPreferences(
+                            getString(R.string.jwt_shared_pref_key),
+                            Context.MODE_PRIVATE
+                        ) ?: return@observe
+                        with(sharedPref.edit()){
+                            putString(getString(R.string.jwt_shared_pref_key), "Bearer "+it.data.token)
+                            apply()
+                        }
+
                         findNavController().navigate(R.id.games_list)
                     } else {
                         Toast.makeText(context, "CREDENCIAIS ERRADAS", Toast.LENGTH_SHORT).show()
@@ -54,7 +63,6 @@ class LoginFragment : Fragment() {
                 }
                 is ResultStatus.Error -> {
                     Toast.makeText(context, "ERRO: "+it.throwable, Toast.LENGTH_SHORT).show()
-                    Log.d("AAAAAA", it.throwable.message.toString())
                 }
             }
         }

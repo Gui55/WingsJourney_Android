@@ -5,10 +5,10 @@ import com.example.wingsjourney.login.framework.network.request.LoginRequest
 import com.example.wingsjourney.login.framework.network.response.LoginResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface GamesRetrofitApi {
-
     @POST("authenticate")
     suspend fun doAuthentication(
         @Body
@@ -16,6 +16,6 @@ interface GamesRetrofitApi {
     ) : LoginResponse
 
     @GET("games")
-    suspend fun getGames() : List<Game>
+    suspend fun getGames(@Header("Authorization") token: String) : List<Game>
 
 }

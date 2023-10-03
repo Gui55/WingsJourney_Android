@@ -6,8 +6,8 @@ import javax.inject.Inject
 class GamesRepositoryImpl @Inject constructor(
     private val gamesDataSource: GamesDataSource
 ) : GamesRepository {
-    override suspend fun getGames(): List<Game> {
-        return gamesDataSource.fetchGames()
+    override suspend fun getGames(token: String): List<Game> {
+        return gamesDataSource.fetchGames(token)
     }
 
 }

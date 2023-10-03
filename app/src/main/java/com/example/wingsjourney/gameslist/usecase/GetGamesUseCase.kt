@@ -10,14 +10,14 @@ import javax.inject.Inject
 interface GetGamesUseCase {
     operator fun invoke(params: GetGamesParams): Flow<ResultStatus<List<Game>>>
 
-    data class GetGamesParams(val s: String)
+    data class GetGamesParams(val token: String)
 }
 
 class GetGamesUseCaseImpl @Inject constructor(
     private val getGamesRepository: GamesRepository
 ) : GetGamesUseCase, UseCase<GetGamesUseCase.GetGamesParams, List<Game>>(){
     override suspend fun doWork(params: GetGamesUseCase.GetGamesParams): ResultStatus<List<Game>> {
-        val games = getGamesRepository.getGames()
+        val games = getGamesRepository.getGames(params.token)
         return ResultStatus.Success(games)
     }
 }

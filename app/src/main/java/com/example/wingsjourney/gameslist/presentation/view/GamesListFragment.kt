@@ -1,17 +1,18 @@
 package com.example.wingsjourney.gameslist.presentation.view
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.wingsjourney.gameslist.presentation.recycler.GamesAdapter
+import com.example.wingsjourney.R
 import com.example.wingsjourney.databinding.FragmentGamesListBinding
-import com.example.wingsjourney.gameslist.domain.model.Game
+import com.example.wingsjourney.gameslist.presentation.recycler.GamesAdapter
 import com.example.wingsjourney.gameslist.presentation.viewmodel.GamesViewModel
 import com.example.wingsjourney.usecase.base.ResultStatus
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,11 +45,16 @@ class GamesListFragment : Fragment() {
     }
 
     private fun setupViewModel(){
-        viewModel.lookForGames()
+        val sharedPref = activity?.getSharedPreferences(getString(R.string.jwt_shared_pref_key), Context.MODE_PRIVATE) ?: return
+        val token = sharedPref.getString(getString(R.string.jwt_shared_pref_key), "")
+        if (token!=null) {
+            viewModel.lookForGames(token.toString())
+        }
         viewModel.gamesResult.observe(viewLifecycleOwner) { status ->
             when (status) {
                 ResultStatus.Loading -> {}
                 is ResultStatus.Success -> gamesAdapter.submitList(status.data)
+
                 is ResultStatus.Error -> {
                     binding.rvGamesList.visibility = GONE
                     binding.tvError.text = status.throwable.message

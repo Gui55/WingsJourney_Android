@@ -8,7 +8,7 @@ import javax.inject.Inject
 class RetrofitGamesListDataSource @Inject constructor(
     private val gamesRetrofitApi: GamesRetrofitApi
 ) : GamesDataSource {
-    override suspend fun fetchGames(): List<Game> {
-        return gamesRetrofitApi.getGames()
+    override suspend fun fetchGames(token: String): List<Game> {
+        return gamesRetrofitApi.getGames(token)
     }
 }

@@ -7,4 +7,5 @@
     <string name="login_word">Login</string>
     <string name="user_word">Usuário</string>
     <string name="password_word">Senha</string>
+    <string name="jwt_shared_pref_key">JWTToken</string>
 </resources>
