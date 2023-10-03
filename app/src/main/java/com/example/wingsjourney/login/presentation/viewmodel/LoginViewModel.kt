@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.wingsjourney.login.framework.network.request.LoginRequest
+import com.example.wingsjourney.login.framework.network.response.LoginResponse
 import com.example.wingsjourney.login.usecase.LoginUseCase
 import com.example.wingsjourney.usecase.base.ResultStatus
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,11 +17,11 @@ class LoginViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase
 ): ViewModel() {
 
-    private val _loginResult = MutableLiveData<ResultStatus<Boolean>>()
-    val loginResult: LiveData<ResultStatus<Boolean>> = _loginResult
+    private val _loginResult = MutableLiveData<ResultStatus<LoginResponse>>()
+    val loginResult: LiveData<ResultStatus<LoginResponse>> = _loginResult
 
     fun performLogin(user: String, password: String) = viewModelScope.launch {
-        loginUseCase(LoginUseCase.LoginParams(user, password)).collect{
+        loginUseCase(LoginUseCase.LoginParams(LoginRequest(user, password))).collect{
             _loginResult.value = it
         }
     }

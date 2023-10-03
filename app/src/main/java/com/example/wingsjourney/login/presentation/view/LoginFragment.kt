@@ -1,6 +1,7 @@
 package com.example.wingsjourney.login.presentation.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -45,14 +46,15 @@ class LoginFragment : Fragment() {
 
                 }
                 is ResultStatus.Success -> {
-                    if(it.data){
+                    if(it.data.token.isNotEmpty()){
                         findNavController().navigate(R.id.games_list)
                     } else {
                         Toast.makeText(context, "CREDENCIAIS ERRADAS", Toast.LENGTH_SHORT).show()
                     }
                 }
                 is ResultStatus.Error -> {
-                    Toast.makeText(context, "ERRO", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "ERRO: "+it.throwable, Toast.LENGTH_SHORT).show()
+                    Log.d("AAAAAA", it.throwable.message.toString())
                 }
             }
         }
