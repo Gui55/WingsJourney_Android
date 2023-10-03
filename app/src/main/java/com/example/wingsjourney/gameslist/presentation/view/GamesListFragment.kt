@@ -46,9 +46,9 @@ class GamesListFragment : Fragment() {
 
     private fun setupViewModel(){
         val sharedPref = activity?.getSharedPreferences(getString(R.string.jwt_shared_pref_key), Context.MODE_PRIVATE) ?: return
-        val token = sharedPref.getString(getString(R.string.jwt_shared_pref_key), "")
-        if (token!=null) {
-            viewModel.lookForGames(token.toString())
+        val token = sharedPref.getString(getString(R.string.jwt_shared_pref_key), "").toString()
+        if (token.isNotEmpty()) {
+            viewModel.lookForGames(token)
         }
         viewModel.gamesResult.observe(viewLifecycleOwner) { status ->
             when (status) {
