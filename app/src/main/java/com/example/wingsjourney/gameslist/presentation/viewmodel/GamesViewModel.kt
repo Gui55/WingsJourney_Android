@@ -19,8 +19,8 @@ class GamesViewModel @Inject constructor(
     private val _gamesResult = MutableLiveData<ResultStatus<List<Game>>>()
     val gamesResult: LiveData<ResultStatus<List<Game>>> = _gamesResult
 
-    fun lookForGames() = viewModelScope.launch {
-        getGamesUseCase(GetGamesUseCase.GetGamesParams("")).collect{
+    fun lookForGames(token: String) = viewModelScope.launch {
+        getGamesUseCase(GetGamesUseCase.GetGamesParams(token)).collect{
             _gamesResult.value = it
         }
     }

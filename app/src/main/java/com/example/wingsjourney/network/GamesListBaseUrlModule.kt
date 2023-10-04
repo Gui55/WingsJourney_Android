@@ -1,4 +1,4 @@
-package com.example.wingsjourney.gameslist.framework.di
+package com.example.wingsjourney.network
 
 import com.example.wingsjourney.BuildConfig
 import com.example.wingsjourney.gameslist.framework.di.qualifier.BaseUrl

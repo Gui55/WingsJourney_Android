@@ -1,7 +1,6 @@
-package com.example.wingsjourney.gameslist.framework.di
+package com.example.wingsjourney.network
 
 import com.example.wingsjourney.gameslist.framework.di.qualifier.BaseUrl
-import com.example.wingsjourney.gameslist.framework.network.GamesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -46,12 +45,12 @@ object GamesListNetworkModule {
         httpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory,
         @BaseUrl baseUrl: String
-    ) : GamesApi {
+    ) : GamesRetrofitApi {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(httpClient)
             .addConverterFactory(gsonConverterFactory)
             .build()
-            .create(GamesApi::class.java)
+            .create(GamesRetrofitApi::class.java)
     }
 }

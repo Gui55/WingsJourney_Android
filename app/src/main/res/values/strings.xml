@@ -4,4 +4,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="games_word_capital_g">Games</string>
     <string name="error_text">ERRO!</string>
+    <string name="login_word">Login</string>
+    <string name="user_word">Usuário</string>
+    <string name="password_word">Senha</string>
+    <string name="jwt_shared_pref_key">JWTToken</string>
 </resources>
