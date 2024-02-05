@@ -1,6 +1,5 @@
 package com.example.wingsjourney.gameslist.presentation.view
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,13 +8,14 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.wingsjourney.R
 import com.example.wingsjourney.databinding.FragmentGamesListBinding
 import com.example.wingsjourney.framework.imageloader.ImageLoader
 import com.example.wingsjourney.gameslist.presentation.recycler.GamesAdapter
 import com.example.wingsjourney.gameslist.presentation.viewmodel.GamesViewModel
 import com.example.wingsjourney.usecase.base.ResultStatus
+import com.example.wingsjourney.util.TokenGetter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -50,12 +50,7 @@ class GamesListFragment : Fragment() {
     }
 
     private fun setupViewModel(){
-        val sharedPref = activity?.getSharedPreferences(
-            getString(R.string.jwt_shared_pref_key),
-            Context.MODE_PRIVATE
-        ) ?: return
-
-        val token = sharedPref.getString(getString(R.string.jwt_shared_pref_key), "").toString()
+        val token = TokenGetter.getToken(context)
 
         if (token.isNotEmpty()) {
             gamesAdapter.setToken(token)
@@ -77,7 +72,12 @@ class GamesListFragment : Fragment() {
     }
 
     private fun recyclerViewConfig(){
-        gamesAdapter = GamesAdapter(imageLoader)
+        gamesAdapter = GamesAdapter(imageLoader){ id, name ->
+            val directions = GamesListFragmentDirections
+                .actionGamesListFragmentToGameDetailsFragment(id, name)
+
+            findNavController().navigate(directions)
+        }
         setupRecyclerView()
     }
     private fun setupRecyclerView(){

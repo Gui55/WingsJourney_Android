@@ -8,4 +8,22 @@
     <string name="user_word">Usuário</string>
     <string name="password_word">Senha</string>
     <string name="jwt_shared_pref_key">JWTToken</string>
+    <string name="description_placeholder">Claro! Quando alguém está estudando programação, diferentes elementos astrológicos podem ser relevantes. Aqui estão algumas associações possíveis:
+
+Mercúrio: Mercúrio é o planeta da mente, da comunicação e do pensamento analítico. Ele governa a lógica, a capacidade de aprendizado e a troca de informações. Em um contexto de estudo de programação, Mercúrio é especialmente significativo, pois está relacionado à compreensão dos conceitos de programação, à habilidade de resolver problemas de forma lógica e à comunicação de ideias relacionadas à programação.
+
+A 3ª Casa: A terceira casa no mapa astrológico está associada à mente consciente, ao aprendizado, à comunicação e às habilidades práticas. Quando alguém está estudando programação, a terceira casa pode indicar a capacidade de aprender e assimilar conceitos de programação, bem como a comunicação de ideias e a aplicação prática desses conceitos.
+
+Urano: Urano é o planeta da inovação, da tecnologia e da originalidade. Ele está associado à capacidade de pensar de forma não convencional e de abraçar novas ideias e tecnologias. No contexto do estudo de programação, Urano pode indicar a capacidade de aprender e adaptar-se rapidamente a novas linguagens de programação, paradigmas ou tecnologias emergentes.
+
+Saturno: Saturno representa estrutura, disciplina e persistência. Em um contexto de estudo de programação, Saturno pode indicar a necessidade de disciplina e dedicação para dominar as habilidades de programação, bem como a capacidade de trabalhar de forma sistemática e seguir um plano de estudo ou currículo.
+
+O Sol: O Sol representa a essência do ser, a identidade e a expressão do ego. No contexto do estudo de programação, o Sol pode indicar a motivação pessoal e o desejo de desenvolver habilidades que possam contribuir para a realização pessoal e profissional.
+
+O Ascendente e o Meio do Céu: O Ascendente representa a personalidade e a abordagem inicial das situações, enquanto o Meio do Céu está associado à carreira e à realização profissional. A posição destes pontos no mapa astrológico pode indicar a direção e o propósito do estudo de programação, bem como as áreas específicas de interesse dentro desse campo.
+
+Essas são apenas algumas das muitas combinações possíveis de planetas e casas que podem ser relevantes quando alguém está estudando programação. Como sempre na astrologia, a interpretação depende do contexto individual e das características do mapa astrológico da pessoa em questão.</string>
+    <string name="genre_and_company_placeholder"><b>Gênero:</b> Ação\n\n<b>Empresa:</b> Capcom</string>
+    <string name="genre_and_company_details"><b>Gênero:</b> %1$s\n\n<b>Empresa:</b> %2$s</string>
+    <string name="error_loading_details">Erro ao carregar os detalhes do game</string>
 </resources>

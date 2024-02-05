@@ -1,6 +1,6 @@
 package com.example.wingsjourney.network
 
-import com.example.wingsjourney.gameslist.framework.di.qualifier.BaseUrl
+import com.example.wingsjourney.framework.di.qualifier.BaseUrl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
