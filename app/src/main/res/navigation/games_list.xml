@@ -7,6 +7,22 @@
     <fragment
         android:id="@+id/gamesListFragment"
         android:name="com.example.wingsjourney.gameslist.presentation.view.GamesListFragment"
-        android:label="GamesListFragment" />
+        android:label="Games" >
+        <action
+            android:id="@+id/action_gamesListFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameDetailsFragment"
+        android:name="com.example.wingsjourney.gamedetails.presentation.view.GameDetailsFragment"
+        android:label="{name}">
+        <argument
+            android:name="id"
+            app:argType="long"/>
+        <argument
+            android:name="name"
+            app:argType="string"/>
+    </fragment>
 
 </navigation>

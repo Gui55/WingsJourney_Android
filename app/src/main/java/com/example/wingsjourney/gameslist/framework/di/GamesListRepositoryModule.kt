@@ -1,6 +1,6 @@
 package com.example.wingsjourney.gameslist.framework.di
 
-import com.example.wingsjourney.gameslist.data.repository.GamesDataSource
+import com.example.wingsjourney.gameslist.data.datasource.GamesDataSource
 import com.example.wingsjourney.gameslist.data.repository.GamesRepository
 import com.example.wingsjourney.gameslist.data.repository.GamesRepositoryImpl
 import com.example.wingsjourney.gameslist.framework.remote.RetrofitGamesListDataSource

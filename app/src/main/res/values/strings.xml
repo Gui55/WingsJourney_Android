@@ -8,4 +8,8 @@
     <string name="user_word">Usuário</string>
     <string name="password_word">Senha</string>
     <string name="jwt_shared_pref_key">JWTToken</string>
+    <string name="description_placeholder">Num pequeno vilarejo, onde o tempo parecia dançar devagar, as flores desabrochavam em cores vibrantes, pintando a paisagem com a alegria da primavera. Entre risos e cantos de pássaros, os moradores compartilhavam histórias ao redor da fogueira, tecendo laços que resistiriam ao teste do tempo. Sob o céu estrelado, a magia sutil daquele lugar ecoava em cada brisa suave que acariciava as folhas das árvores centenárias.</string>
+    <string name="genre_and_company_placeholder"><b>Gênero:</b> Ação\n\n<b>Empresa:</b> Capcom</string>
+    <string name="genre_and_company_details"><b>Gênero:</b> %1$s\n\n<b>Empresa:</b> %2$s</string>
+    <string name="error_loading_details">Erro ao carregar os detalhes do game</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.wingsjourney.gameslist.framework.di.qualifier
+package com.example.wingsjourney.framework.di.qualifier
 
 import javax.inject.Qualifier
 

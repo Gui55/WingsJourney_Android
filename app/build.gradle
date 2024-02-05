@@ -6,6 +6,7 @@ plugins {
 }
 
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: "androidx.navigation.safeargs"
 
 def secretPropertiesFile = rootProject.file("secretdata.properties")
 def secretProperties = new Properties()
