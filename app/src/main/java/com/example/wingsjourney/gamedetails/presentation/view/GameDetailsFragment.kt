@@ -1,6 +1,7 @@
 package com.example.wingsjourney.gamedetails.presentation.view
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,6 +52,7 @@ class GameDetailsFragment : Fragment() {
         token = TokenGetter.getToken(context)
         setupObservation()
         viewModel.getGameDetails(token, args.id)
+        binding.tvGameDescription.movementMethod = ScrollingMovementMethod()
     }
 
     private fun setupObservation(){
