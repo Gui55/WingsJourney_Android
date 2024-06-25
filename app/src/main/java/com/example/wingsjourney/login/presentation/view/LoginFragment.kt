@@ -1,6 +1,7 @@
 package com.example.wingsjourney.login.presentation.view
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,9 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import com.example.wingsjourney.R
 import com.example.wingsjourney.databinding.FragmentLoginBinding
+import com.example.wingsjourney.gameslist.presentation.MainActivity
 import com.example.wingsjourney.login.presentation.viewmodel.LoginViewModel
 import com.example.wingsjourney.usecase.base.ResultStatus
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,7 +44,7 @@ class LoginFragment : Fragment() {
         viewModel.loginResult.observe(viewLifecycleOwner){
             when(it){
                 ResultStatus.Loading -> {
-
+                    showProgressBar(true)
                 }
                 is ResultStatus.Success -> {
                     if(it.data.token.isNotEmpty()){
@@ -56,13 +57,15 @@ class LoginFragment : Fragment() {
                             apply()
                         }
 
-                        findNavController().navigate(R.id.games_list)
+                        goToGamesList()
                     } else {
                         Toast.makeText(context, "CREDENCIAIS ERRADAS", Toast.LENGTH_SHORT).show()
+                        showProgressBar(false)
                     }
                 }
                 is ResultStatus.Error -> {
                     Toast.makeText(context, "ERRO: "+it.throwable, Toast.LENGTH_SHORT).show()
+                    showProgressBar(false)
                 }
             }
         }
@@ -75,5 +78,15 @@ class LoginFragment : Fragment() {
                 binding.etPassword.text.toString()
             )
         }
+    }
+
+    private fun goToGamesList(){
+        startActivity(Intent(context, MainActivity::class.java))
+        requireActivity().finish()
+    }
+
+    private fun showProgressBar(show: Boolean){
+        binding.pbLogin.visibility = if(show) View.VISIBLE else View.GONE
+        binding.btnLogin.visibility = if(show) View.GONE else View.VISIBLE
     }
 }
