@@ -45,12 +45,18 @@ object GamesListNetworkModule {
         httpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory,
         @BaseUrl baseUrl: String
-    ) : GamesRetrofitApi {
+    ) : Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(httpClient)
             .addConverterFactory(gsonConverterFactory)
             .build()
-            .create(GamesRetrofitApi::class.java)
+    }
+
+    @Provides
+    fun provideGamesApiInterface(
+        retrofit: Retrofit
+    ) : GamesRetrofitApi{
+        return retrofit.create(GamesRetrofitApi::class.java)
     }
 }
