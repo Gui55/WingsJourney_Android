@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.core.usecase.base.ResultStatus
 import com.example.wingsjourney.login.framework.network.request.LoginRequest
 import com.example.wingsjourney.login.framework.network.response.LoginResponse
 import com.example.wingsjourney.login.usecase.LoginUseCase
-import com.example.wingsjourney.usecase.base.ResultStatus
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -9,11 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import com.example.core.usecase.base.ResultStatus
 import com.example.wingsjourney.R
 import com.example.wingsjourney.databinding.FragmentLoginBinding
-import com.example.wingsjourney.gameslist.presentation.MainActivity
+import com.example.wingsjourney.games.GamesActivity
 import com.example.wingsjourney.login.presentation.viewmodel.LoginViewModel
-import com.example.wingsjourney.usecase.base.ResultStatus
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -81,7 +81,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun goToGamesList(){
-        startActivity(Intent(context, MainActivity::class.java))
+        startActivity(Intent(context, GamesActivity::class.java))
         requireActivity().finish()
     }
 
