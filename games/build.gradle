@@ -1,7 +1,11 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
+
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     namespace 'com.example.wingsjourney.games'
@@ -20,6 +24,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -30,8 +39,25 @@ android {
 }
 
 dependencies {
+    implementation project(':base')
+    implementation project(':core')
+
     implementation libs.bundles.essential
     testImplementation libs.junit
     androidTestImplementation libs.extJunit
     androidTestImplementation libs.espressoCore
+
+    implementation libs.hiltAndroid
+    kapt libs.hiltAndroidCompiler
+
+    implementation libs.recyclerview
+
+    implementation libs.bundles.lifecycle
+
+    implementation libs.glide
+    kapt libs.glideCompiler
+
+    implementation libs.javaxInject
+
+    implementation libs.bundles.retrofit
 }

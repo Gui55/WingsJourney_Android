@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 rootProject.name = "WingsJourney"
 include ':app'
 include ':games'
+include ':base'
+include ':core'

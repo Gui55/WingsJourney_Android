@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.wingsjourney.R
+import com.example.wingsjourney.base.framework.imageloader.ImageLoader
 import com.example.wingsjourney.databinding.FragmentGameDetailsBinding
-import com.example.wingsjourney.framework.imageloader.ImageLoader
 import com.example.wingsjourney.gamedetails.domain.model.Game
 import com.example.wingsjourney.gamedetails.presentation.viewmodel.GameDetailsViewModel
 import com.example.wingsjourney.usecase.base.ResultStatus
@@ -28,7 +28,7 @@ class GameDetailsFragment : Fragment() {
 
     private val viewModel: GameDetailsViewModel by viewModels()
 
-    private val args by navArgs<GameDetailsFragmentArgs>()
+    //private val args by navArgs<GameDetailsFragmentArgs>()
 
     private lateinit var token: String
 
@@ -51,7 +51,7 @@ class GameDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         token = TokenGetter.getToken(context)
         setupObservation()
-        viewModel.getGameDetails(token, args.id)
+        //viewModel.getGameDetails(token, args.id)
         binding.tvGameDescription.movementMethod = ScrollingMovementMethod()
     }
 

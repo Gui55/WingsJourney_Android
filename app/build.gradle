@@ -50,6 +50,8 @@ android {
 
 dependencies {
     implementation project(':games')
+    implementation project(':base')
+    implementation project(':core')
 
     //Implementações básicas
     implementation libs.bundles.essential

@@ -1,7 +1,6 @@
 package com.example.wingsjourney.network
 
 import com.example.wingsjourney.gamedetails.domain.model.Game
-import com.example.wingsjourney.gameslist.domain.model.GeneralGameInfo
 import com.example.wingsjourney.login.framework.network.request.LoginRequest
 import com.example.wingsjourney.login.framework.network.response.LoginResponse
 import retrofit2.http.Body
@@ -17,8 +16,8 @@ interface GamesRetrofitApi {
         request: LoginRequest
     ) : LoginResponse
 
-    @GET("games")
-    suspend fun getGames(@Header("Authorization") token: String) : List<GeneralGameInfo>
+//    @GET("games")
+//    suspend fun getGames(@Header("Authorization") token: String) : List<GeneralGameInfo>
 
     @GET("games/id/{id}")
     suspend fun getGameDetails(
