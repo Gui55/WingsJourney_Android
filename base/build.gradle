@@ -1,0 +1,67 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    id 'kotlin-kapt'
+}
+
+def secretPropertiesFile = rootProject.file("secretdata.properties")
+def secretProperties = new Properties()
+secretProperties.load(new FileInputStream(secretPropertiesFile))
+
+android {
+    namespace 'com.example.wingsjourney.base'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField "String", "BASE_URL", secretProperties["LOCAL_IP"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures{
+        buildConfig = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation libs.kotlinKtx
+    implementation libs.appCompat
+    implementation libs.material
+    implementation libs.androidxactivity
+    implementation libs.constraint
+    testImplementation libs.junit
+    androidTestImplementation libs.extJunit
+    androidTestImplementation libs.espressoCore
+
+    // Glide
+    implementation libs.glide
+    kapt libs.glideCompiler
+
+    // Dagger Hilt
+    implementation libs.hiltAndroid
+    kapt libs.hiltAndroidCompiler
+
+    //Retrofit
+    implementation libs.bundles.retrofit
+
+    //OkHttp
+    implementation(platform(libs.okhttpBom))
+    implementation libs.bundles.okhttpElements
+}

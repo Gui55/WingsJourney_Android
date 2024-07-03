@@ -1,10 +1,10 @@
 package com.example.wingsjourney.login.usecase
 
+import com.example.core.usecase.base.ResultStatus
+import com.example.core.usecase.base.UseCase
 import com.example.wingsjourney.login.data.repository.LoginRepository
 import com.example.wingsjourney.login.framework.network.request.LoginRequest
 import com.example.wingsjourney.login.framework.network.response.LoginResponse
-import com.example.wingsjourney.usecase.base.ResultStatus
-import com.example.wingsjourney.usecase.base.UseCase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

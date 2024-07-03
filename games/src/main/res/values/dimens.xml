@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="description_text_size">18sp</dimen>
+    <dimen name="little_margin">20dp</dimen>
+    <dimen name="first_font_size">25sp</dimen>
+    <dimen name="game_cover_width">160dp</dimen>
+    <dimen name="game_cover_height">270dp</dimen>
+</resources>

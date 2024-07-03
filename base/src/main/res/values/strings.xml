@@ -1,0 +1,3 @@
+<resources>
+    <string name="jwt_shared_pref_key">JWTToken</string>
+</resources>
