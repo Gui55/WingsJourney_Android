@@ -1,7 +1,7 @@
-package com.example.wingsjourney.gamedetails.data.repository
+package com.example.wingsjourney.games.gamesdetails.data.repository
 
-import com.example.wingsjourney.gamedetails.data.datasource.GameDetailsDataSource
-import com.example.wingsjourney.gamedetails.domain.model.Game
+import com.example.wingsjourney.games.domain.model.Game
+import com.example.wingsjourney.games.gamesdetails.data.datasource.GameDetailsDataSource
 import javax.inject.Inject
 
 class GameDetailsRepositoryImpl @Inject constructor(

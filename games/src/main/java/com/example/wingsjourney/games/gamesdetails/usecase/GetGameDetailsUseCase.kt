@@ -1,9 +1,9 @@
-package com.example.wingsjourney.gamedetails.usecase
+package com.example.wingsjourney.games.gamesdetails.usecase
 
-import com.example.wingsjourney.gamedetails.data.repository.GameDetailsRepository
-import com.example.wingsjourney.gamedetails.domain.model.Game
-import com.example.wingsjourney.usecase.base.ResultStatus
-import com.example.wingsjourney.usecase.base.UseCase
+import com.example.core.usecase.base.ResultStatus
+import com.example.core.usecase.base.UseCase
+import com.example.wingsjourney.games.domain.model.Game
+import com.example.wingsjourney.games.gamesdetails.data.repository.GameDetailsRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

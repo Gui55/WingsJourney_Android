@@ -1,4 +1,4 @@
-package com.example.wingsjourney.games.gameslist.network
+package com.example.wingsjourney.games.gamesdetails.network
 
 import dagger.Module
 import dagger.Provides
@@ -8,12 +8,13 @@ import retrofit2.Retrofit
 
 @Module
 @InstallIn(SingletonComponent::class)
-object GamesListNetworkModule {
+object GameDetailsNetworkModule {
 
     @Provides
     fun provideGamesApiInterface(
         retrofit: Retrofit
-    ) : GamesRetrofitApi {
-        return retrofit.create(GamesRetrofitApi::class.java)
+    ) : GameDetailsRetrofitApi {
+        return retrofit.create(GameDetailsRetrofitApi::class.java)
     }
+
 }

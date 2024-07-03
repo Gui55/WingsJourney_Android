@@ -1,9 +1,9 @@
-package com.example.wingsjourney.gamedetails.framework.di
+package com.example.wingsjourney.games.gamesdetails.framework.di
 
-import com.example.wingsjourney.gamedetails.data.datasource.GameDetailsDataSource
-import com.example.wingsjourney.gamedetails.data.repository.GameDetailsRepository
-import com.example.wingsjourney.gamedetails.data.repository.GameDetailsRepositoryImpl
-import com.example.wingsjourney.gamedetails.framework.remote.RetrofitGameDetailsDataSource
+import com.example.wingsjourney.games.gamesdetails.data.datasource.GameDetailsDataSource
+import com.example.wingsjourney.games.gamesdetails.data.repository.GameDetailsRepository
+import com.example.wingsjourney.games.gamesdetails.data.repository.GameDetailsRepositoryImpl
+import com.example.wingsjourney.games.gamesdetails.framework.remote.RetrofitGameDetailsDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
