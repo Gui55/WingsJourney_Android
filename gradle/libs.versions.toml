@@ -9,7 +9,7 @@ junit = "4.13.2"
 junitVersion = "1.2.1"
 ktx = "1.13.1"
 appCompat = "1.7.0"
-lifecycle = "2.8.2"
+lifecycle = "2.8.3"
 material = "1.12.0"
 constraint = "2.1.4"
 navigation = "2.7.7"
@@ -22,6 +22,8 @@ coroutinesCore = "1.7.3"
 kotlin = "1.9.0"
 agp = "8.0.2"
 jetbrainsKotlinJvm = "1.9.0"
+mockito = "2.2.0"
+androidArchCoreTest = "2.1.0"
 
 [libraries]
 kotlinKtx = {module = "androidx.core:core-ktx", version.ref="ktx"}
@@ -49,10 +51,15 @@ hiltAndroidCompiler = { module = "com.google.dagger:hilt-android-compiler", vers
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 pagingCommon = { module = "androidx.paging:paging-common", version.ref = "pagingCommon" }
 javaxInject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
+coroutinesAndroid = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutinesCore"}
 coroutinesCore = {module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesCore"}
+coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesCore"}
 okhttpBom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttpBom" }
 okhttp = { module = "com.squareup.okhttp3:okhttp" }
 loggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor" }
+mockito = {module = "com.nhaarman.mockitokotlin2:mockito-kotlin", version.ref="mockito"}
+androidArchCoreTesting = { module="androidx.arch.core:core-testing", version.ref="androidArchCoreTest"}
+
 [plugins]
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
