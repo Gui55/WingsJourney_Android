@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.usecase.base.ResultStatus
-import com.example.wingsjourney.games.domain.model.Game
+import com.example.core.domain.model.Game
 import com.example.wingsjourney.games.gamesdetails.usecase.GetGameDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -24,5 +24,4 @@ class GamesDetailsViewModel @Inject constructor(
             _gameDetailsResult.value = it
         }
     }
-
 }

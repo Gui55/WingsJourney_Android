@@ -59,4 +59,38 @@ class LoginViewModelTest {
             assertTrue(result is ResultStatus.Success)
         }
 
+    @Test
+    fun `viewModel method should return loading status`() =
+        runTest {
+            //Arrange
+            whenever(loginUseCase(any()))
+                .thenReturn(
+                    flowOf(ResultStatus.Loading)
+                )
+
+            //Act
+            viewModel.performLogin("user", "password")
+
+            //Assert
+            val result = viewModel.loginResult.value
+            assertTrue(result is ResultStatus.Loading)
+        }
+
+    @Test
+    fun `viewModel method should return error status from api call`() =
+        runTest{
+            //Arrange
+            whenever(loginUseCase.invoke(any()))
+                .thenReturn(
+                    flowOf(ResultStatus.Error(RuntimeException("error")))
+                )
+
+            //Act
+            viewModel.performLogin("user", "password")
+
+            //Assert
+            val result = viewModel.loginResult.value
+            assertTrue(result is ResultStatus.Error)
+        }
+
 }

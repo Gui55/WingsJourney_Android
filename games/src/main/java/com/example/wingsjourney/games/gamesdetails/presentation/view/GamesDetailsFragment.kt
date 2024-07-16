@@ -15,7 +15,7 @@ import com.example.wingsjourney.base.framework.imageloader.ImageLoader
 import com.example.wingsjourney.base.util.TokenGetter
 import com.example.wingsjourney.games.R
 import com.example.wingsjourney.games.databinding.FragmentGamesDetailsBinding
-import com.example.wingsjourney.games.domain.model.Game
+import com.example.core.domain.model.Game
 import com.example.wingsjourney.games.gamesdetails.presentation.viewmodel.GamesDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
