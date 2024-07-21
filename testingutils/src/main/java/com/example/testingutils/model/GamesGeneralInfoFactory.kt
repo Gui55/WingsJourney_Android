@@ -18,8 +18,8 @@ class GamesGeneralInfoFactory {
     }
 
     sealed class GameProduct{
-        object AssassinsCreed : GameProduct()
-        object XenobladeChronicles : GameProduct()
+        data object AssassinsCreed : GameProduct()
+        data object XenobladeChronicles : GameProduct()
     }
 
 }
