@@ -1,6 +1,6 @@
 package com.example.wingsjourney.games.gameslist.network
 
-import com.example.wingsjourney.games.gameslist.domain.model.GeneralGameInfo
+import com.example.core.domain.model.GeneralGameInfo
 import retrofit2.http.GET
 import retrofit2.http.Header
 

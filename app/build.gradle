@@ -52,10 +52,11 @@ dependencies {
     implementation project(':games')
     implementation project(':base')
     implementation project(':core')
+    testImplementation project(':testingutils')
 
     //Implementações básicas
     implementation libs.bundles.essential
-    testImplementation libs.junit
+    //testImplementation libs.junit
     androidTestImplementation libs.extJunit
     androidTestImplementation libs.espressoCore
 
@@ -90,8 +91,13 @@ dependencies {
 
     //Coroutines core
     implementation libs.coroutinesCore
+    implementation libs.coroutinesAndroid
+    //implementation libs.coroutinesTest
 
     // OkHttp
     implementation(platform(libs.okhttpBom))
     implementation(libs.bundles.okhttpElements)
+
+    //Mockito
+    //implementation libs.mockito
 }
