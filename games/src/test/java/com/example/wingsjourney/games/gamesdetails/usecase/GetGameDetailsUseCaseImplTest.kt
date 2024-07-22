@@ -36,7 +36,7 @@ class GetGameDetailsUseCaseImplTest {
 
     private val gamesFactory = GamesFactory()
 
-    private val gamesList = listOf(
+    private val gamesDetailsList = listOf(
         gamesFactory.create(GamesFactory.GameProduct.AssassinsCreed),
         gamesFactory.create(GamesFactory.GameProduct.XenobladeChronicles)
     )
@@ -51,7 +51,7 @@ class GetGameDetailsUseCaseImplTest {
         runTest{
             //Arrange
             val index: Long = 1
-            val correctGame = gamesList.find { it.id == index }!!
+            val correctGame = gamesDetailsList.find { it.id == index }!!
             whenever(gameDetailsRepository.getGameDetails(any(), any()))
                 .thenReturn(correctGame)
 
@@ -70,7 +70,7 @@ class GetGameDetailsUseCaseImplTest {
 
             //Arrange
             val index: Long = 1
-            val correctGame = gamesList.find { it.id == index }!!
+            val correctGame = gamesDetailsList.find { it.id == index }!!
             whenever(gameDetailsRepository.getGameDetails(any(), any()))
                 .thenReturn(correctGame)
 
@@ -89,7 +89,7 @@ class GetGameDetailsUseCaseImplTest {
 
             //Arrange
             val index: Long = 1
-            val correctGame = gamesList.find { it.id == index }!!
+            val correctGame = gamesDetailsList.find { it.id == index }!!
             whenever(gameDetailsRepository.getGameDetails(any(), any()))
                 .thenReturn(correctGame)
 
@@ -108,7 +108,7 @@ class GetGameDetailsUseCaseImplTest {
 
             //Arrange
             val index: Long = 2
-            val correctGame = gamesList.find { it.id == index }!!
+            val correctGame = gamesDetailsList.find { it.id == index }!!
             whenever(gameDetailsRepository.getGameDetails(any(), any()))
                 .thenReturn(correctGame)
 
@@ -127,7 +127,7 @@ class GetGameDetailsUseCaseImplTest {
         runTest {
             //Arrange
             val index: Long = 1
-            val correctGame = gamesList.find { it.id == index }!!
+            val correctGame = gamesDetailsList.find { it.id == index }!!
             whenever(gameDetailsRepository.getGameDetails(any(), any()))
                 .thenReturn(correctGame)
 
