@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.usecase.base.ResultStatus
-import com.example.wingsjourney.games.gameslist.domain.model.GeneralGameInfo
+import com.example.core.domain.model.GeneralGameInfo
 import com.example.wingsjourney.games.gameslist.usecase.GetGamesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

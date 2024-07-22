@@ -1,6 +1,6 @@
 package com.example.wingsjourney.games.gamesdetails.framework.remote
 
-import com.example.wingsjourney.games.domain.model.Game
+import com.example.core.domain.model.Game
 import com.example.wingsjourney.games.gamesdetails.data.datasource.GameDetailsDataSource
 import com.example.wingsjourney.games.gamesdetails.network.GameDetailsRetrofitApi
 import javax.inject.Inject

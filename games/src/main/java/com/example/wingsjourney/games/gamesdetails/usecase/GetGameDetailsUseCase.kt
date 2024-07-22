@@ -2,7 +2,7 @@ package com.example.wingsjourney.games.gamesdetails.usecase
 
 import com.example.core.usecase.base.ResultStatus
 import com.example.core.usecase.base.UseCase
-import com.example.wingsjourney.games.domain.model.Game
+import com.example.core.domain.model.Game
 import com.example.wingsjourney.games.gamesdetails.data.repository.GameDetailsRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package com.example.wingsjourney.games.gameslist.domain.model
+package com.example.core.domain.model
 
 data class GeneralGameInfo(
     val id: Long,

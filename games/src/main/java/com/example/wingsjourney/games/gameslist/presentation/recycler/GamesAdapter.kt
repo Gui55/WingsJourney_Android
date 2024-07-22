@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.wingsjourney.base.framework.imageloader.ImageLoader
 import com.example.wingsjourney.base.util.OnGameItemClick
-import com.example.wingsjourney.games.gameslist.domain.model.GeneralGameInfo
+import com.example.core.domain.model.GeneralGameInfo
 
 class GamesAdapter(
     private val imageLoader: ImageLoader,

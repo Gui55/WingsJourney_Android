@@ -1,7 +1,7 @@
 package com.example.wingsjourney.games.gameslist.framework.remote
 
 import com.example.wingsjourney.games.gameslist.data.datasource.GamesDataSource
-import com.example.wingsjourney.games.gameslist.domain.model.GeneralGameInfo
+import com.example.core.domain.model.GeneralGameInfo
 import com.example.wingsjourney.games.gameslist.network.GamesRetrofitApi
 import javax.inject.Inject
 
